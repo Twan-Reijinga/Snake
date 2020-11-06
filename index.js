@@ -127,15 +127,15 @@ function startScreen () {
 
 function gamemode() {
   if (mode == 0) {
-    waitTime = 100;
+    waitTime = 125;
     snakeColor = [200,200,200];
   } 
   if (mode == 1) {
-    waitTime = 50;
+    waitTime = 75;
     snakeColor = [6,203,121];
   } 
   if (mode == 2) {
-    waitTime = 150;
+    waitTime = 175;
     snakeColor = [0,102,184];
   }
 }
@@ -208,7 +208,7 @@ class snake {
       if(activeSnake[i].x == xSnake && activeSnake[i].y == ySnake) { // bots met zich zelf
         start = false;
         localStorage.setItem("Localscore", HighScore);
-        saveScore("snake", score));
+        saveScore("snake", score);
       }
     }
     if(ySnake == yFood && xSnake == xFood) {
