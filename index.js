@@ -1,7 +1,7 @@
-var Width = 640; // 640
+var Width = 1040; // 640
 var Height = 680; // 680
 var yField = 600; // 600
-var xField = 600; // 600
+var xField = 1000; // 600
 
 var HeadSize = 20; // ? 20 * 20; ? //
 var xSnake = HeadSize * 3;
@@ -185,7 +185,7 @@ function scoreboard() {
   // ! highScore
   if (score >= HighScore) {
     HighScore = score;
-    localStorage.setItem("Localscore", HighScore);
+    // localStorage.setItem("Localscore", HighScore);
     // console.log(localStorage.getItem("Localscore"));
   }
 
@@ -201,12 +201,14 @@ class snake {
     if (ySnake < 0 || ySnake > yField - HeadSize || xSnake < 0 || xSnake > xField - HeadSize) { // bots met de muur
       direction = "false";
       moveBuffer = [];
-      saveScore("snake", localStorage.getItem("Localscore"));
+      localStorage.setItem("Localscore", HighScore);
+      saveScore("snake", score);
     }
     for(var i = 1; i < length - 1; i++) { // i != 0, want dat is snakehead
       if(activeSnake[i].x == xSnake && activeSnake[i].y == ySnake) { // bots met zich zelf
         start = false;
-        saveScore("snake", localStorage.getItem("Localscore"));
+        localStorage.setItem("Localscore", HighScore);
+        saveScore("snake", score));
       }
     }
     if(ySnake == yFood && xSnake == xFood) {
