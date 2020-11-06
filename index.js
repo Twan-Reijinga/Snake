@@ -142,25 +142,25 @@ function gamemode() {
 
 function detectKeyPress() {
   if (moveBuffer.length < bufferSize) {
-    if (keyIsDown(87) && 
+    if ((keyIsDown(87) || keyIsDown(UP_ARROW)) && 
         direction !== "down" && 
         direction !== "up" && 
         moveBuffer[moveBuffer.length-1] !== "up"){
       moveBuffer.push("up");
     } 
-    if (keyIsDown(83) && 
+    if ((keyIsDown(83) || keyIsDown(DOWN_ARROW)) && 
         direction !== "up" && 
         direction !== "down" &&
         moveBuffer[moveBuffer.length-1] !== "down"){
       moveBuffer.push("down");
     } 
-    if (keyIsDown(65) && 
+    if ((keyIsDown(65) || keyIsDown(LEFT_ARROW)) && 
         direction !== "right" && 
         direction !== "left" &&
         moveBuffer[moveBuffer.length-1] !== "left"){
       moveBuffer.push("left");
     }
-    if (keyIsDown(68) && 
+    if ((keyIsDown(68) || keyIsDown(RIGHT_ARROW)) && 
         direction !== "left" && 
         direction !== "right" &&
         moveBuffer[moveBuffer.length-1] !== "right"){
