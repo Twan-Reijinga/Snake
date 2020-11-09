@@ -45,8 +45,8 @@ function draw(){
     if(move) {
       
       gamemode();
-      background(0); // #Black
-      fill(40); // #Gray
+      background(6,203,121); // #Black
+      fill(30); // #Gray
       rect(20, 60, xField, yField);
       scoreboard();
       if (moveBuffer[0]) {
@@ -239,7 +239,7 @@ class snake {
   display() {
     fill(snakeColor[0], snakeColor[1], snakeColor[2])
     strokeWeight(2);
-    stroke(40);
+    stroke(30);
     rect(xSnake + 20, ySnake + 60, HeadSize, HeadSize); // ? head ? //
     activeSnake = [];
     let i;
